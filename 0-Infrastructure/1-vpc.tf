@@ -1,7 +1,7 @@
 #######################################
 # 1-vpc.tf
 #######################################
-resource "aws_vpc" "vpc-DONSPACE" {
+resource "aws_vpc" "vpc_DONSPACE" {
   cidr_block       = "10.66.0.0/16"
   instance_tenancy = "default"
 
@@ -9,6 +9,6 @@ resource "aws_vpc" "vpc-DONSPACE" {
   enable_dns_hostnames = true
 
   tags = {
-    Name = "vpc-DONSPACE"
+    Name = "vpc_DONSPACE"
   }
 }

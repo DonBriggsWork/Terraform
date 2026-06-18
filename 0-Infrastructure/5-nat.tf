@@ -2,21 +2,21 @@
 #######################################
 # 5-nat.tf
 #######################################
-resource "aws_eip" "eip-nat" {
+resource "aws_eip" "eip_nat" {
   domain = "vpc"
 
   tags = {
-    Name = "eip-nat"
+    Name = "eip_nat"
   }
 }
 
-resource "aws_nat_gateway" "gw-nat" {
-  allocation_id = aws_eip.eip-nat.id
-  subnet_id     = aws_subnet.sn-public-1.id
+resource "aws_nat_gateway" "gw_nat" {
+  allocation_id = aws_eip.eip_nat.id
+  subnet_id     = aws_subnet.sn_public_1.id
 
   tags = {
-    Name = "gw-nat"
+    Name = "gw_nat"
   }
 
-  depends_on = [aws_internet_gateway.igw-public]
+  depends_on = [aws_internet_gateway.igw_public]
 }
